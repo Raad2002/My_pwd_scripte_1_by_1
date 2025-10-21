@@ -53,7 +53,7 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object -Process {
 # 🎯 Attacher les événements
 $btnInstallApp.Add_Click({
      try {
-        Start-Process powershell.exe -Verb RunAs -WindowStyle Hidden -ArgumentList '-ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/Raad2002/My_pwd_scripte_1_by_1/refs/heads/main/scripte_ps1/InstallAppWindow.ps1 | iex"'
+        Start-Process powershell.exe -Verb RunAs  -ArgumentList '-ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/Raad2002/My_pwd_scripte_1_by_1/refs/heads/main/scripte_ps1/InstallAppWindow.ps1 | iex"'
     }
     catch {
         [System.Windows.MessageBox]::Show("Erreur lors du lancement du script avec élévation.`n$_")
