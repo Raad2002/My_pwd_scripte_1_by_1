@@ -460,4 +460,3 @@ $removeXml
 
 # 🪟 Afficher la fenêtre
 $window.ShowDialog()
-pause
