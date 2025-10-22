@@ -369,7 +369,7 @@ $excludeXml
     }
 
     # Lance l’installation
-    Start-Process -FilePath $setupPath -WorkingDirectory (Split-Path $setupPath) -ArgumentList "/configure `"$tempXml`"" -Verb RunAs
+    Start-Process -FilePath $setupPath -WorkingDirectory (Split-Path $setupPath) -ArgumentList "/configure `"$tempXml`"" -Verb RunAs -WindowStyle Hidden
 })
 
 
