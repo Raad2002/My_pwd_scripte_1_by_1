@@ -68,34 +68,34 @@ $xaml = @'
 
 
 
-    <!-- CheckBox Example -->
-    <Canvas Margin="24,128,372,336">
-        <CheckBox Content="Word" IsChecked="False" Background="White" Foreground="White" Height="33" Width="128" FontFamily="Arial Black" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"/>
-        <CheckBox Content="OutlookClassic" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="44" Width="172" FontFamily="Arial Black" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <CheckBox Content="Skype" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="91" Width="128" FontFamily="Arial Black" FontSize="16"/>
-        <CheckBox Content="Access" IsChecked="False" Background="White" Foreground="White" Height="35" Canvas.Top="141" Width="128" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="16"/>
-    </Canvas>
+  <!-- CheckBox Example -->
+     <Canvas Margin="24,128,372,336">
+         <CheckBox Name="WordCheck" Content="Word" IsChecked="False" Background="White" Foreground="White" Height="33" Width="128" FontFamily="Arial Black" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16"/>
+         <CheckBox Name="OutlookClassicCheck" Content="OutlookClassic" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="44" Width="172" FontFamily="Arial Black" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+         <CheckBox Name="SkypeCheck" Content="Skype" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="91" Width="128" FontFamily="Arial Black" FontSize="16"/>
+         <CheckBox Name="AccessCheck" Content="Access" IsChecked="False" Background="White" Foreground="White" Height="35" Canvas.Top="141" Width="128" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Arial Black" FontSize="16"/>
+     </Canvas>
 
 
 
 
 
-    <Canvas Margin="220,127,205,337">
-        <CheckBox Content="Excel" IsChecked="False" Background="White" Foreground="White" Height="33" Width="104" FontFamily="Arial Black" FontSize="16"/>
-        <CheckBox Content="OneNote" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="44" Width="104" FontFamily="Arial Black" FontSize="16"/>
-        <CheckBox Content="OutlookNew" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="91" Width="153" FontFamily="Arial Black" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <CheckBox Content="Publisher" IsChecked="False" Background="White" Foreground="White" Height="33" Canvas.Top="141" Width="104" FontFamily="Arial Black" FontSize="16"/>
-    </Canvas>
+     <Canvas Margin="220,127,205,337">
+         <CheckBox Name="ExcelCheck" Content="Excel" IsChecked="False" Background="White" Foreground="White" Height="33" Width="104" FontFamily="Arial Black" FontSize="16"/>
+         <CheckBox Name="OneNoteCheck" Content="OneNote" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="44" Width="104" FontFamily="Arial Black" FontSize="16"/>
+         <CheckBox Name="OutlookNewCheck" Content="OutlookNew" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="91" Width="153" FontFamily="Arial Black" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+         <CheckBox Name="PublisherCheck" Content="Publisher" IsChecked="False" Background="White" Foreground="White" Height="33" Canvas.Top="141" Width="104" FontFamily="Arial Black" FontSize="16"/>
+     </Canvas>
 
 
 
 
-    <Canvas Margin="411,128,23,336">
-        <CheckBox Content="PowerPoint" IsChecked="False" Background="White" Foreground="White" Height="33" Width="128" FontFamily="Arial Black" FontSize="16"/>
-        <CheckBox Content="Teams" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="44" Width="128" FontFamily="Arial Black" FontSize="16"/>
-        <CheckBox Content="OneDrive" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="91" Width="128" FontFamily="Arial Black" FontSize="16"/>
-        <CheckBox Content="Groove" IsChecked="False" Background="White" Foreground="White" Height="33" Canvas.Top="141" Width="128" FontFamily="Arial Black" FontSize="16" />
-    </Canvas>
+     <Canvas Margin="411,128,23,336">
+         <CheckBox Name="PowerPointCheck" Content="PowerPoint" IsChecked="False" Background="White" Foreground="White" Height="33" Width="128" FontFamily="Arial Black" FontSize="16"/>
+         <CheckBox Name="TeamsCheck" Content="Teams" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="44" Width="128" FontFamily="Arial Black" FontSize="16"/>
+         <CheckBox Name="OneDriveCheck" Content="OneDrive" IsChecked="False" Background="White" Foreground="White" Height="34" Canvas.Top="91" Width="128" FontFamily="Arial Black" FontSize="16"/>
+         <CheckBox Name="GrooveCheck" Content="Groove" IsChecked="False" Background="White" Foreground="White" Height="33" Canvas.Top="141" Width="128" FontFamily="Arial Black" FontSize="16" />
+     </Canvas>
 
 
 
@@ -143,7 +143,19 @@ $xaml = @'
             Height="50" Canvas.Left="53" Canvas.Top="191" Width="230" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
 
+
+
+
     </Canvas>
+
+
+
+
+
+
+    <!-- Bloc des 2 boutons -->
+
+
 
 
 
@@ -342,8 +354,6 @@ $excludeXml
     if (!(Test-Path $setupPath)) {
         try {
             $url = "https://raw.githubusercontent.com/Raad2002/My_pwd_scripte_1_by_1/main/setup/setup.exe"
-
-            
             Invoke-WebRequest -Uri $url -OutFile $setupPath
             Start-Sleep -Seconds 2
             Unblock-File -Path $setupPath
@@ -498,7 +508,6 @@ $ActiveOfficeButton.Add_Click({
     $setupScript = Join-Path $tempPath "SetupComplete.cmd"
     Start-Process -FilePath $setupScript -Verb RunAs
 })
-
 
 
 
