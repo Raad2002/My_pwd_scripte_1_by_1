@@ -1,5 +1,5 @@
 
-
+#irm https://raw.githubusercontent.com/Raad2002/My_pwd_scripte_1_by_1/refs/heads/main/scripte_ps1/MainWindow.ps1 | iex
 
 
 [void][System.Reflection.Assembly]::LoadWithPartialName('presentationframework')
